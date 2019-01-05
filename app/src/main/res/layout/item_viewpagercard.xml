@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:materialdesign="http://schemas.android.com/tools"
+    android:id="@+id/viewPager_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="70dp"
+    android:layout_marginTop="70dp"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageview_item_viewpagercard"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@mipmap/recipe"
+            android:transitionName="@string/sharedImageView" />
+
+        <ImageView
+            android:id="@+id/lableview_item_viewpagercard"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/kitchen" />
+        <TextView
+            android:id="@+id/food_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageview_item_viewpagercard"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/textname"
+            android:textColor="@color/colorItemViewPageCardText"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:transitionName="@string/sharedTextView" />
+        <TextView
+            android:id="@+id/textview_item_viewpagercard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/food_price"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/textview"
+            android:textColor="@color/colorItemViewPageCardText"
+            android:textSize="16sp"
+           />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/createtime_item_viewpagercard"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/textdolo"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorFloatingButton1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/food_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/textmoneys"
+                android:textColor="@color/colorFloatingButton1"
+                android:textSize="28sp"
+
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/createtime_item_viewpagercard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/menu_item_viewpagercard"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/_2018"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/menu_item_viewpagercard"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:scaleType="centerInside"
+            android:src="@mipmap/button_set" />
+        <!--悬浮按钮-->
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/buttonFloat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imageview_item_viewpagercard"
+            android:layout_below="@+id/createtime_item_viewpagercard"
+            android:layout_marginTop="-10dp"
+            android:background="@color/colorAccent"
+            app:animate="true"
+            app:iconDrawable="@mipmap/ic_action_new"
+            app:rippleColor="#f4ea2a"
+            materialdesign:animate="true" />
+        <!--参考ButtonFloat博客-->
+        <!--https://www.cnblogs.com/tianzhijiexian/p/4146924.html-->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:src="@mipmap/ic_action_new" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

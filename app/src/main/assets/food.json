@@ -1,0 +1,47 @@
+{
+  "status": "0",
+  "msg": "ok",
+  "result": [
+    {
+      "classid": "1",
+      "name": "精美快餐",
+      "parentid": "0"
+
+    },
+    {
+      "classid": "113",
+      "name": "商务快餐",
+      "parentid": "0"
+
+    },
+    {
+      "classid": "144",
+      "name": "校园快餐",
+      "parentid": "0"
+
+    },
+    {
+      "classid": "213",
+      "name": "校园炒饭",
+      "parentid": "0"
+    },
+    {
+      "classid": "223",
+      "name": "加料专区",
+      "parentid": "0"
+
+    },
+    {
+      "classid": "269",
+      "name": "加饭专区",
+      "parentid": "0"
+
+    },
+    {
+      "classid": "301",
+      "name": "饮料专区",
+      "parentid": "0"
+
+    }
+  ]
+}
