@@ -52,24 +52,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-       <!-- <RadioButton
-            android:drawablePadding="12px"
-            android:id="@+id/me_wait_payment_rb"
-            style="@style/me_wait_radio_btn"
-            android:drawableTop="@mipmap/g_faifukuan"
-            android:text="@string/pendingpayment" />-->
-
-        <!--<RadioButton
-            android:drawablePadding="12px"
-            android:id="@+id/me_wait_delgoods_rb"
-            style="@style/me_wait_radio_btn"
-            android:drawableTop="@mipmap/g_daifahuo"
-            android:text="@string/Tobeshipped" />-->
-
         <RadioButton
-            android:drawablePadding="12px"
             android:id="@+id/me_wait_putgoods_rb"
+            android:drawablePadding="12px"
             style="@style/me_wait_radio_btn"
             android:drawableTop="@mipmap/payss"
             android:text="@string/Tobereceived" />

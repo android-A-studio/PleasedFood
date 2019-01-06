@@ -1,39 +1,36 @@
 package net.hycollege.ljl.pleasedfood.fragment;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.CardView;
-import android.text.TextUtils;
 import android.transition.Explode;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.gc.materialdesign.views.ProgressBarCircularIndeterminate;
 
 import net.hycollege.ljl.pleasedfood.R;
 import net.hycollege.ljl.pleasedfood.utils.RefreshUserInfo;
+import net.hycollege.ljl.pleasedfood.view.OrderPages;
 import net.hycollege.ljl.pleasedfood.view.RegistTransition.AActivityOne;
-import net.hycollege.ljl.pleasedfood.view.RegistTransition.AActivityTwo;
 import net.hycollege.ljl.pleasedfood.view.Settings.SettingsActivity;
 import net.hycollege.ljl.pleasedfood.view.aboutme.AboutMe;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class getFragmentMe extends BaseFragment {
     RefreshUserInfo refreshUserInfo = null;
     View view ,aboutmes;
+    RadioButton mRadioButton;
     View viewByIdNoSuccess = null;
     View viewByIdSuccess = null;
     TextView username = null;
@@ -131,34 +128,38 @@ public class getFragmentMe extends BaseFragment {
     @Override
     public View initView(LayoutInflater inflater, final ViewGroup container) {
         if (view == null) {
-            view = inflater.inflate(R.layout.fragmentset, container, false);
+            view = inflater.inflate(R.layout.fragmentme, container, false);
         }
         setting=view.findViewById(R.id.setting);
         aboutmes=view.findViewById(R.id.aboutmes);
+        mRadioButton=view.findViewById(R.id.me_wait_putgoods_rb);
         mProgressBarCircularIndeterminates = view.findViewById(R.id.progressBarCircularIndetermininates);
         exitlogin = view.findViewById(R.id.exitlogins);
         exitlogin.setCardBackgroundColor(Color.rgb(255, 130, 1));
         viewByIdNoSuccess = view.findViewById(R.id.loginandregist);
         viewByIdSuccess = view.findViewById(R.id.success);
         username = view.findViewById(R.id.username);
+        mRadioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转到订单页面
+                /*Intent intent = new Intent(context, OrderPages.class);
+                context.startActivity(intent);*/
+            }
+        });
         //关于我们
         aboutmes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //执行动画跳转到登陆页面
+                //执行动画跳转到关于我页面
                 //结合android:theme="@style/Translucents"主题可让背景透明
                 getActivity().getWindow().setExitTransition(null);
                 getActivity().getWindow().setEnterTransition(null);
-                 /*  Explode explode = new Explode();
-                 explode.setDuration(500);
-                getActivity().getWindow().setExitTransition(explode);
-                getActivity().getWindow().setEnterTransition(explode);*/
                 ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity());
                 //准备加载登陆页面
                 Intent i2 = new Intent(v.getContext(), AboutMe.class);
                 //跳转到登陆页面
                 startActivity(i2, oc2.toBundle());
-//                startActivity(new Intent(context, AboutMe.class));
             }
         });
         TextView textView = view.findViewById(R.id.login);
